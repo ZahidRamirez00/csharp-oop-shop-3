@@ -10,7 +10,7 @@ namespace CSharpShop3
     {
         private int codice;
         private string name;
-        private string description;
+        private string description = "";
         private double prezzo;
         private double IVA;
 
