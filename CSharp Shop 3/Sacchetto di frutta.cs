@@ -5,9 +5,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CS_Shop_2
+namespace CSharpShop3
 {
-    public class Sacchetto_di_frutta:Prodotto
+    public class Sacchetto_di_frutta : Prodotto
     {
         private uint numeroFrutti;
         private string tipoFrutto;

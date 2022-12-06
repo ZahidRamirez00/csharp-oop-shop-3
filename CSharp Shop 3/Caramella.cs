@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CS_Shop_2
+namespace CSharpShop3
 {
     public class Caramella : Prodotto
     {

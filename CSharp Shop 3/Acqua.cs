@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpShop2
+namespace CSharpShop3
 {
     public class Acqua : Prodotto
     {
@@ -14,13 +14,14 @@ namespace CSharpShop2
         private float acquaBevuta;
         private float acquaRiempita;
 
-        public Acqua(int Codice, string Nome, string Descrizione, float Prezzo, int Iva, float litriAcqua, int livelloPh, string sorgente, float acquaBevuta = 0, float acquaRiempita = 0) : base(Codice, Nome, Descrizione, Prezzo, Iva)
+        //public Acqua(int Codice, string Nome, string Descrizione, float Prezzo, int Iva, float litriAcqua, int livelloPh, string sorgente, float acquaBevuta = 0, float acquaRiempita = 0) : base(Codice, Nome, Descrizione, Prezzo, Iva)
+        public Acqua(string name, string description, double prezzo, double IVA, float LitriAcqua, int LivelloPh, string Sorgente, float AcquaBevuta, float AcquaRiempita) : base(name, description, prezzo, IVA)
         {
-            this.litriAcqua = litriAcqua;
-            this.livelloPh = livelloPh;
-            this.sorgente = sorgente;
-            this.acquaBevuta = acquaBevuta;
-            this.acquaRiempita = acquaRiempita;
+            this.litriAcqua = LitriAcqua;
+            this.livelloPh = LivelloPh;
+            this.sorgente = Sorgente;
+            this.acquaBevuta = AcquaBevuta;
+            this.acquaRiempita = AcquaRiempita;
         }
 
         public float GetLitriAcqua()
@@ -62,24 +63,23 @@ namespace CSharpShop2
             }
             
         }
+        
 
         public override void StampaProdotto()
         {
-            string stringaProdotto = "Litri d'acqua: \t" + this.AcquaRimasta() + " l" +
+            string stringaProdotto = "Litri d'acqua: \t" + AcquaRimasta(this.acquaBevuta) + " l" +
                 "\nLivello di PH: \t\t" + this.livelloPh +
                 "\nSorgente: " + this.sorgente;
             base.StampaProdotto();
             Console.WriteLine(stringaProdotto);
         }
-
-        
-        private float AcquaRimasta(float AcquaBevuta)
+        public float AcquaRimasta (float AcquaBevuta)
         {
             if (AcquaBevuta != 0)
             {
-                this.litriAcqua = this.litriAcqua - this.acquaBevuta;
-                return this.litriAcqua;
+                this.litriAcqua -= this.acquaBevuta;
             }
+            return this.litriAcqua;
         }
     }
 }
