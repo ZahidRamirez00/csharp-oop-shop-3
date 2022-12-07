@@ -2,6 +2,7 @@
 
 using CSharpShop3;
 
+Acqua bottiglaDAcqau = new Acqua("Panna","È buona e rinfrescante", 1.2,22,1,-1,"Alpine",0,0);
 
 Caramella goleador = new Caramella("Goleador", "Una buona caramella", 0.10, 22, "frutta", 30);
 Caramella bubblegum = new Caramella("BubbleGum", "Gomma Americana", 0.15, 22, "amarena", 45);
